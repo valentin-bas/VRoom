@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libvrgb", "libvrgb\libvrgb.vcxproj", "{1F84BA09-6168-4E46-BBC6-5233365B582E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestLibvrgb", "TestLibvrgb\TestLibvrgb.vcxproj", "{85E2993A-F002-47C3-ADE7-060E277FAD0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F84BA09-6168-4E46-BBC6-5233365B582E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1F84BA09-6168-4E46-BBC6-5233365B582E}.Debug|Win32.Build.0 = Debug|Win32
+		{1F84BA09-6168-4E46-BBC6-5233365B582E}.Debug|x64.ActiveCfg = Debug|x64
+		{1F84BA09-6168-4E46-BBC6-5233365B582E}.Debug|x64.Build.0 = Debug|x64
+		{1F84BA09-6168-4E46-BBC6-5233365B582E}.Release|Win32.ActiveCfg = Release|Win32
+		{1F84BA09-6168-4E46-BBC6-5233365B582E}.Release|Win32.Build.0 = Release|Win32
+		{1F84BA09-6168-4E46-BBC6-5233365B582E}.Release|x64.ActiveCfg = Release|x64
+		{1F84BA09-6168-4E46-BBC6-5233365B582E}.Release|x64.Build.0 = Release|x64
+		{85E2993A-F002-47C3-ADE7-060E277FAD0C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{85E2993A-F002-47C3-ADE7-060E277FAD0C}.Debug|Win32.Build.0 = Debug|Win32
+		{85E2993A-F002-47C3-ADE7-060E277FAD0C}.Debug|x64.ActiveCfg = Debug|x64
+		{85E2993A-F002-47C3-ADE7-060E277FAD0C}.Debug|x64.Build.0 = Debug|x64
+		{85E2993A-F002-47C3-ADE7-060E277FAD0C}.Release|Win32.ActiveCfg = Release|Win32
+		{85E2993A-F002-47C3-ADE7-060E277FAD0C}.Release|Win32.Build.0 = Release|Win32
+		{85E2993A-F002-47C3-ADE7-060E277FAD0C}.Release|x64.ActiveCfg = Release|x64
+		{85E2993A-F002-47C3-ADE7-060E277FAD0C}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

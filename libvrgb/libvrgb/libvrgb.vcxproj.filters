@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers sources\private">
+      <UniqueIdentifier>{96a0fa25-8ab6-4225-8e47-b5025dc10114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\private">
+      <UniqueIdentifier>{ee61f708-6270-4861-b2ad-3aa82688f3a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\good_namespae">
+      <UniqueIdentifier>{e3936c68-5a06-483d-8bd5-615c25c4a207}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\good_namespae">
+      <UniqueIdentifier>{a78c71f1-bd18-4da5-bdc6-04dbc182ab72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\public">
+      <UniqueIdentifier>{d95ec396-4c95-473e-8cc6-4391af4259b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\public">
+      <UniqueIdentifier>{433fd9ba-e226-4f4f-afb0-cff493c0b8d9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Video.cpp">
+      <Filter>Fichiers sources\good_namespae</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Fichiers sources\good_namespae</Filter>
+    </ClCompile>
+    <ClCompile Include="CPU.cpp">
+      <Filter>Fichiers sources\good_namespae</Filter>
+    </ClCompile>
+    <ClCompile Include="GBException.cpp">
+      <Filter>Fichiers sources\private</Filter>
+    </ClCompile>
+    <ClCompile Include="Instructions.cpp">
+      <Filter>Fichiers sources\private</Filter>
+    </ClCompile>
+    <ClCompile Include="MBC.cpp">
+      <Filter>Fichiers sources\private</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory.cpp">
+      <Filter>Fichiers sources\private</Filter>
+    </ClCompile>
+    <ClCompile Include="Registers.cpp">
+      <Filter>Fichiers sources\private</Filter>
+    </ClCompile>
+    <ClCompile Include="Cartridge.cpp">
+      <Filter>Fichiers sources\public</Filter>
+    </ClCompile>
+    <ClCompile Include="Pad.cpp">
+      <Filter>Fichiers sources\public</Filter>
+    </ClCompile>
+    <ClCompile Include="VRGBEmulator.cpp">
+      <Filter>Fichiers sources\public</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CPU.h">
+      <Filter>Fichiers d%27en-tête\good_namespae</Filter>
+    </ClInclude>
+    <ClInclude Include="Video.h">
+      <Filter>Fichiers d%27en-tête\good_namespae</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Fichiers d%27en-tête\good_namespae</Filter>
+    </ClInclude>
+    <ClInclude Include="GBException.h">
+      <Filter>Fichiers d%27en-tête\private</Filter>
+    </ClInclude>
+    <ClInclude Include="Instructions.h">
+      <Filter>Fichiers d%27en-tête\private</Filter>
+    </ClInclude>
+    <ClInclude Include="MBC.h">
+      <Filter>Fichiers d%27en-tête\private</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory.h">
+      <Filter>Fichiers d%27en-tête\private</Filter>
+    </ClInclude>
+    <ClInclude Include="Registers.h">
+      <Filter>Fichiers d%27en-tête\private</Filter>
+    </ClInclude>
+    <ClInclude Include="Cartridge.h">
+      <Filter>Fichiers d%27en-tête\public</Filter>
+    </ClInclude>
+    <ClInclude Include="IGBScreenDrawable.h">
+      <Filter>Fichiers d%27en-tête\public</Filter>
+    </ClInclude>
+    <ClInclude Include="Def.h">
+      <Filter>Fichiers d%27en-tête\public</Filter>
+    </ClInclude>
+    <ClInclude Include="Pad.h">
+      <Filter>Fichiers d%27en-tête\public</Filter>
+    </ClInclude>
+    <ClInclude Include="VRGBEmulator.h">
+      <Filter>Fichiers d%27en-tête\public</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
