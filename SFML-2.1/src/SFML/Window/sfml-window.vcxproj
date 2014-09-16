@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{979F5DA7-5AFB-4CF0-9D14-FA633EDE54DB}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>sfml-window</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\Projects\VRoom\SFML-2.1\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">sfml-window.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">sfml-window-s-d</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\Projects\VRoom\SFML-2.1\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">sfml-window.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">sfml-window-s</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\Projects\VRoom\SFML-2.1\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">sfml-window.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">sfml-window-s</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\Projects\VRoom\SFML-2.1\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">sfml-window.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">sfml-window</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> "opengl32.lib" "winmm.lib" "gdi32.lib" %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> "opengl32.lib" "winmm.lib" "gdi32.lib" %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> "opengl32.lib" "winmm.lib" "gdi32.lib" %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> "opengl32.lib" "winmm.lib" "gdi32.lib" %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Window\Context.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Window\Export.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\GlContext.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Window\GlResource.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Window\ContextSettings.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Window\Event.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\InputImpl.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Window\Joystick.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\JoystickImpl.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\JoystickManager.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Window\Keyboard.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Window\Mouse.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Window\VideoMode.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\VideoModeImpl.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Window\Window.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Window\WindowHandle.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\WindowImpl.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Window\WindowStyle.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Win32\WglContext.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Win32\InputImpl.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Win32\JoystickImpl.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Win32\WindowImplWin32.hpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Context.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\GlContext.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\GlResource.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Joystick.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\JoystickManager.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Keyboard.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Mouse.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\VideoMode.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Window.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\WindowImpl.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Win32\WglContext.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Win32\InputImpl.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Win32\JoystickImpl.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Win32\VideoModeImpl.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Window\Win32\WindowImplWin32.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:/Projects/VRoom/SFML-2.1/ZERO_CHECK.vcxproj">
+      <Project>A5E681F9-7C44-4961-AB46-5615D1EABFB1</Project>
+    </ProjectReference>
+    <ProjectReference Include="F:/Projects/VRoom/SFML-2.1/src/SFML/System/sfml-system.vcxproj">
+      <Project>5E22839F-ABDB-44E5-944B-5894204CA054</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

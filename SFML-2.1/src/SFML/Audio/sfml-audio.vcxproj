@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{344FE011-3F29-4FAE-BA01-8794CF351099}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>sfml-audio</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\Projects\VRoom\SFML-2.1\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">sfml-audio.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">sfml-audio-s-d</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\Projects\VRoom\SFML-2.1\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">sfml-audio.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">sfml-audio-s</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\Projects\VRoom\SFML-2.1\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">sfml-audio.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">sfml-audio-s</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\Projects\VRoom\SFML-2.1\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">sfml-audio.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">sfml-audio</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;F:\Projects\VRoom\SFML-2.1\extlibs\headers\AL;F:\Projects\VRoom\SFML-2.1\extlibs\headers\libsndfile\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;F:\Projects\VRoom\SFML-2.1\extlibs\headers\AL;F:\Projects\VRoom\SFML-2.1\extlibs\headers\libsndfile\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;F:\Projects\VRoom\SFML-2.1\extlibs\headers\AL;F:\Projects\VRoom\SFML-2.1\extlibs\headers\libsndfile\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> "F:/Projects/VRoom/SFML-2.1/extlibs/libs-msvc/x86/openal32.lib" "F:/Projects/VRoom/SFML-2.1/extlibs/libs-msvc/x86/sndfile.lib" %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;F:\Projects\VRoom\SFML-2.1\extlibs\headers\AL;F:\Projects\VRoom\SFML-2.1\extlibs\headers\libsndfile\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;F:\Projects\VRoom\SFML-2.1\extlibs\headers\AL;F:\Projects\VRoom\SFML-2.1\extlibs\headers\libsndfile\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;F:\Projects\VRoom\SFML-2.1\extlibs\headers\AL;F:\Projects\VRoom\SFML-2.1\extlibs\headers\libsndfile\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> "F:/Projects/VRoom/SFML-2.1/extlibs/libs-msvc/x86/openal32.lib" "F:/Projects/VRoom/SFML-2.1/extlibs/libs-msvc/x86/sndfile.lib" %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;F:\Projects\VRoom\SFML-2.1\extlibs\headers\AL;F:\Projects\VRoom\SFML-2.1\extlibs\headers\libsndfile\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;F:\Projects\VRoom\SFML-2.1\extlibs\headers\AL;F:\Projects\VRoom\SFML-2.1\extlibs\headers\libsndfile\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;F:\Projects\VRoom\SFML-2.1\extlibs\headers\AL;F:\Projects\VRoom\SFML-2.1\extlibs\headers\libsndfile\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> "F:/Projects/VRoom/SFML-2.1/extlibs/libs-msvc/x86/openal32.lib" "F:/Projects/VRoom/SFML-2.1/extlibs/libs-msvc/x86/sndfile.lib" %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;F:\Projects\VRoom\SFML-2.1\extlibs\headers\AL;F:\Projects\VRoom\SFML-2.1\extlibs\headers\libsndfile\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;_CRT_SECURE_NO_DEPRECATE;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;F:\Projects\VRoom\SFML-2.1\extlibs\headers\AL;F:\Projects\VRoom\SFML-2.1\extlibs\headers\libsndfile\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Projects\VRoom\SFML-2.1\include;F:\Projects\VRoom\SFML-2.1\src;F:\Projects\VRoom\SFML-2.1\extlibs\headers\AL;F:\Projects\VRoom\SFML-2.1\extlibs\headers\libsndfile\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> "F:/Projects/VRoom/SFML-2.1/extlibs/libs-msvc/x86/openal32.lib" "F:/Projects/VRoom/SFML-2.1/extlibs/libs-msvc/x86/sndfile.lib" %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\ALCheck.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\AudioDevice.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Audio\Export.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Audio\Listener.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Audio\Music.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Audio\Sound.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Audio\SoundBuffer.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Audio\SoundBufferRecorder.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\SoundFile.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Audio\SoundRecorder.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Audio\SoundSource.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Audio\SoundStream.hpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\ALCheck.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\AudioDevice.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\Listener.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\Music.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\Sound.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\SoundBuffer.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\SoundBufferRecorder.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\SoundFile.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\SoundRecorder.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\SoundSource.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Audio\SoundStream.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:/Projects/VRoom/SFML-2.1/src/SFML/System/sfml-system.vcxproj">
+      <Project>5E22839F-ABDB-44E5-944B-5894204CA054</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

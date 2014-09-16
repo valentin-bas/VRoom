@@ -5,6 +5,9 @@
 
 #include <SFML/System.hpp>
 
+#define WIN32_LEAN_AND_MEAN
+#include <Windows.h>
+
 #include "Renderer.h"
 
 using namespace vrgb;
@@ -29,7 +32,7 @@ int main(int argc, char* argv[])
 	video = new Video(nullptr);
 	sound = new Sound();
 	cpu = new CPU(video, sound);
-	cartridge = new Cartridge("tetris.gb");
+	cartridge = new Cartridge("agame.gb");
 
 	sound->SetEnabled(false);
 	cpu->Reset();
@@ -48,9 +51,8 @@ int main(int argc, char* argv[])
 		cpu->ExecuteOneFrame();
 		const float elapsedTime = (float)clock.getElapsedTime().asMilliseconds();
 		if (elapsedTime < desiredMs)
-			sf::sleep(sf::microseconds((desiredMs - elapsedTime) / 1000));
+			sf::sleep(sf::milliseconds((desiredMs - elapsedTime) / 1000));
 		lastElapsedTime = clock.getElapsedTime().asMilliseconds();
-
     }
 
 

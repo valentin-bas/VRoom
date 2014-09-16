@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\Color.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\Font.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\GLCheck.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\Image.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\ImageLoader.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\RenderStates.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\RenderTexture.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\RenderTarget.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\RenderWindow.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\Shader.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\Texture.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\TextureSaver.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\Transform.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\Transformable.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\View.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\Vertex.cpp" />
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\Shape.cpp">
+      <Filter>drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\CircleShape.cpp">
+      <Filter>drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\RectangleShape.cpp">
+      <Filter>drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\ConvexShape.cpp">
+      <Filter>drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\Sprite.cpp">
+      <Filter>drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\Text.cpp">
+      <Filter>drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\VertexArray.cpp">
+      <Filter>drawables</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\RenderTextureImpl.cpp">
+      <Filter>render texture</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\RenderTextureImplFBO.cpp">
+      <Filter>render texture</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\RenderTextureImplDefault.cpp">
+      <Filter>render texture</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\BlendMode.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Color.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Export.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Font.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Glyph.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\GLCheck.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Image.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\ImageLoader.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\PrimitiveType.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Rect.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Rect.inl" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\RenderStates.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\RenderTexture.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\RenderTarget.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\RenderWindow.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Shader.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Texture.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\TextureSaver.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Transform.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Transformable.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\View.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Vertex.hpp" />
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Drawable.hpp">
+      <Filter>drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Shape.hpp">
+      <Filter>drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\CircleShape.hpp">
+      <Filter>drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\RectangleShape.hpp">
+      <Filter>drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\ConvexShape.hpp">
+      <Filter>drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Sprite.hpp">
+      <Filter>drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\Text.hpp">
+      <Filter>drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\include\SFML\Graphics\VertexArray.hpp">
+      <Filter>drawables</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\RenderTextureImpl.hpp">
+      <Filter>render texture</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\RenderTextureImplFBO.hpp">
+      <Filter>render texture</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\RenderTextureImplDefault.hpp">
+      <Filter>render texture</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\stb_image\stb_image.h">
+      <Filter>stb_image</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Graphics\stb_image\stb_image_write.h">
+      <Filter>stb_image</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="drawables">
+      <UniqueIdentifier>{F4521B4C-7DE5-4F98-91BB-DA454561EA95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="render texture">
+      <UniqueIdentifier>{578457C0-B28C-4B21-8D06-9F175E1D9312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stb_image">
+      <UniqueIdentifier>{C58C63FA-6AF7-4400-8E73-EF2B9D7B69E6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

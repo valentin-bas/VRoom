@@ -3,7 +3,7 @@
 #include <IGBScreenDrawable.h>
 #include <SFML/Graphics.hpp>
 
-class Renderer : public IGBScreenDrawable
+class Renderer : public vrgb::IGBScreenDrawable
 {
 private:
 	sf::RenderWindow	*_window;

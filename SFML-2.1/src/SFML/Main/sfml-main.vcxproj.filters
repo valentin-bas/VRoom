@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\Projects\VRoom\SFML-2.1\src\SFML\Main\SFML_Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
