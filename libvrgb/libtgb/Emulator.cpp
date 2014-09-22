@@ -10,6 +10,7 @@ using namespace tgb;
 
 Emulator::Emulator(GBRenderer& renderer)
 	: _gb(nullptr)
+	, _exthookDef(nullptr)
 	, _renderer(&renderer)
 {
 }
@@ -24,7 +25,12 @@ void	Emulator::Clear()
 	if (_gb != nullptr)
 	{
 		delete _gb;
-		_gb == nullptr;
+		_gb = nullptr;
+	}
+	if (_exthookDef != nullptr)
+	{
+		delete _exthookDef;
+		_exthookDef = nullptr;
 	}
 }
 
@@ -37,6 +43,12 @@ bool	Emulator::LoadCartridge(const char* romName)
 	char *originalBuf;
 	char *buf;
 
+	if (_exthookDef == nullptr)
+	{
+		_exthookDef = new ext_hook();
+		if (_exthookDef == nullptr)
+			return false;
+	}
 	originalBuf = (char*)malloc(strlen(romName) +1);
 	if (originalBuf == nullptr)
 		return false;
@@ -161,4 +173,17 @@ void	Emulator::Update()
 		_gb->run();
 	}
 	_gb->set_skip(0); //to skip frame (0 = no skip)
+}
+
+void	Emulator::HookExport(unsigned char(*sendFct)(unsigned char), bool(*ledStatut)(void))
+{
+	_exthookDef->send = sendFct;
+	_exthookDef->led = ledStatut;
+
+	_gb->hook_extport(_exthookDef);
+}
+
+void	Emulator::UnhookExport()
+{
+	_gb->unhook_extport();
 }

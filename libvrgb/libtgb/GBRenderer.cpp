@@ -15,11 +15,6 @@ void	GBRenderer::reset()
 {
 }
 
-int		GBRenderer::check_pad()
-{
-	return 0;
-}
-
 word	GBRenderer::map_color(word gb_col)
 {
 	return gb_col;

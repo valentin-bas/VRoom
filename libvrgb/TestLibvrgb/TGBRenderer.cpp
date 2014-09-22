@@ -8,6 +8,8 @@ TGBRenderer::TGBRenderer(void)
 	, _WIDTH(160)
 	, _HEIGHT(144)
 {
+	for (int i = 0; i < 8; ++i)
+		_keystates[i] = false;
 }
 
 
@@ -60,8 +62,40 @@ void	TGBRenderer::refresh()
 	{
 		if (event.type == sf::Event::Closed)
 			_window->close();
+		if (event.type == sf::Event::KeyPressed || event.type == sf::Event::KeyReleased)
+		{
+			switch (event.key.code)
+			{
+			case sf::Keyboard::Q: //A
+				_keystates[0] = event.type == sf::Event::KeyPressed ? true : false;
+				break;
+			case sf::Keyboard::W: //B
+				_keystates[1] = event.type == sf::Event::KeyPressed ? true : false;
+				break;
+			case sf::Keyboard::D: //Select
+				_keystates[2] = event.type == sf::Event::KeyPressed ? true : false;
+				break;
+			case sf::Keyboard::S: //Start
+				_keystates[3] = event.type == sf::Event::KeyPressed ? true : false;
+				break;
+			case sf::Keyboard::Down:
+				_keystates[4] = event.type == sf::Event::KeyPressed ? true : false;
+				break;
+			case sf::Keyboard::Up:
+				_keystates[5] = event.type == sf::Event::KeyPressed ? true : false;
+				break;
+			case sf::Keyboard::Left:
+				_keystates[6] = event.type == sf::Event::KeyPressed ? true : false;
+				break;
+			case sf::Keyboard::Right:
+				_keystates[7] = event.type == sf::Event::KeyPressed ? true : false;
+				break;
+			}
+		}
 	}
-
+	_padstate = 0;
+	for (int i = 0; i < 8; ++i)
+		_padstate |= _keystates[i] ? (1 << i) : 0;
 	_texture->loadFromImage(*_framebuffer);
 	_sprite.setTexture(*_texture);
 	_window->draw(_sprite);
@@ -86,6 +120,13 @@ void	TGBRenderer::render_screen(byte *buf, int width, int height, int depth)
 			_framebuffer->setPixel(j, i, color);
 		}
 	}
+}
+
+int		TGBRenderer::check_pad()
+{
+	if (_padstate != 0)
+		return _padstate;
+	return 0;
 }
 
 /*void	Renderer::OnPreDraw()

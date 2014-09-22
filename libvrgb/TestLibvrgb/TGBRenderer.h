@@ -13,6 +13,9 @@ private:
 	sf::Text			_textFps;
 	sf::Font			_font;
 
+	bool				_keystates[8];
+	int					_padstate;
+
 	const int	_WIDTH;
 	const int	_HEIGHT;
 public:
@@ -26,5 +29,7 @@ public:
 
 	virtual void	refresh() override;
 	virtual void	render_screen(byte *buf, int width, int height, int depth) override;
+	virtual int		check_pad() override;
+
 };
 

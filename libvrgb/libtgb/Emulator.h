@@ -7,6 +7,7 @@
 #endif
 
 class gb;
+struct ext_hook;
 
 namespace tgb
 {
@@ -17,6 +18,9 @@ namespace tgb
 	private:
 		gb*			_gb;
 		GBRenderer*	_renderer;
+		ext_hook*	_exthookDef;
+
+
 	public:
 		Emulator(GBRenderer& renderer);
 		virtual ~Emulator();
@@ -25,7 +29,8 @@ namespace tgb
 		bool	LoadCartridge(const char* name);
 
 		void	Update();
-		//void	LoadCartridge(Cartridge* cartridge);
-		//void	SetScreen(IGBScreenDrawable* screen);
+
+		void	HookExport(unsigned char(*send)(unsigned char), bool(*led)(void));
+		void	UnhookExport();
 	};
 }

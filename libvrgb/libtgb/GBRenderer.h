@@ -19,7 +19,6 @@ namespace tgb
 
 	public:
 		virtual void	reset() override;
-		virtual int		check_pad() override;
 		virtual word	map_color(word gb_col) override;
 		virtual word	unmap_color(word gb_col) override;
 
