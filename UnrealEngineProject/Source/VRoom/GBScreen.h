@@ -44,11 +44,14 @@ private:
 		virtual int		check_pad() override;
 
 		uint8*	Data() { return m_Framebuffer; }
+		void	SetPadState(int idx, bool value);
+
+		bool			m_keystates[8];
 	};
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = StaticMeshComponents) TSubobjectPtr<UStaticMeshComponent> screen;
 	UPROPERTY(EditDefaultsOnly, Category = Materials) UMaterialInterface *MasterMaterialRef;
-	UPROPERTY() UTexture2D *DynamicTexture;
+	UPROPERTY() UTexture2D* DynamicTexture;
 	UPROPERTY() UMaterialInstanceDynamic* DynamicMaterial;
 
 	CGBFramebuffer	m_Framebuffer;
@@ -61,14 +64,39 @@ protected:
 
 	void UpdateTextureRegions(UTexture2D* Texture, int32 MipIndex, uint32 NumRegions, FUpdateTextureRegion2D* Regions, uint32 SrcPitch, uint32 SrcBpp, uint8* SrcData, bool bFreeData);
 
+	static AGBScreen* TargetGB;
+	static AGBScreen* MasterGB;
+
+	static unsigned char CallbackExtPort(unsigned char data);
+	static bool GetLedStatut();
+
 public:
-	UFUNCTION(BlueprintCallable, Category = "InputsBinding") void UpButtonChangeState(bool pressed);
-	UFUNCTION(BlueprintCallable, Category = "InputsBinding") void DownButtonChangeState(bool pressed);
-	UFUNCTION(BlueprintCallable, Category = "InputsBinding") void LeftButtonChangeState(bool pressed);
-	UFUNCTION(BlueprintCallable, Category = "InputsBinding") void RightButtonChangeState(bool pressed);
-	UFUNCTION(BlueprintCallable, Category = "InputsBinding") void AButtonChangeState(bool pressed);
-	UFUNCTION(BlueprintCallable, Category = "InputsBinding") void BButtonChangeState(bool pressed);
-	UFUNCTION(BlueprintCallable, Category = "InputsBinding") void SelectButtonChangeState(bool pressed);
-	UFUNCTION(BlueprintCallable, Category = "InputsBinding") void StartButtonChangeState(bool pressed);
-	
+	unsigned char SeriSend(unsigned char data);
+
+	void UpButtonChangeState(bool pressed);
+	void DownButtonChangeState(bool pressed);
+	void LeftButtonChangeState(bool pressed);
+	void RightButtonChangeState(bool pressed);
+	void AButtonChangeState(bool pressed);
+	void BButtonChangeState(bool pressed);
+	void SelectButtonChangeState(bool pressed);
+	void StartButtonChangeState(bool pressed);
+
+	void UpButtonPressed() { m_Framebuffer.m_keystates[5] = true; }
+	void DownButtonPressed() { m_Framebuffer.m_keystates[4] = true; }
+	void LeftButtonPressed() { m_Framebuffer.m_keystates[6] = true; }
+	void RightButtonPressed() { m_Framebuffer.m_keystates[7] = true; }
+	void AButtonPressed() { m_Framebuffer.m_keystates[0] = true; }
+	void BButtonPressed() { m_Framebuffer.m_keystates[1] = true; }
+	void SelectButtonPressed() { m_Framebuffer.m_keystates[2] = true; }
+	void StartButtonPressed() { m_Framebuffer.m_keystates[3] = true; }
+
+	void UpButtonReleased() { m_Framebuffer.m_keystates[5] = false; }
+	void DownButtonReleased() { m_Framebuffer.m_keystates[4] = false; }
+	void LeftButtonReleased() { m_Framebuffer.m_keystates[6] = false; }
+	void RightButtonReleased() { m_Framebuffer.m_keystates[7] = false; }
+	void AButtonReleased() { m_Framebuffer.m_keystates[0] = false; }
+	void BButtonReleased() { m_Framebuffer.m_keystates[1] = false; }
+	void SelectButtonReleased() { m_Framebuffer.m_keystates[2] = false; }
+	void StartButtonReleased() { m_Framebuffer.m_keystates[3] = false; }
 };

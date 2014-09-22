@@ -30,6 +30,8 @@ namespace tgb
 
 		void	Update();
 
+		unsigned char	SeriSend(unsigned char data);
+
 		void	HookExport(unsigned char(*send)(unsigned char), bool(*led)(void));
 		void	UnhookExport();
 	};

@@ -175,6 +175,11 @@ void	Emulator::Update()
 	_gb->set_skip(0); //to skip frame (0 = no skip)
 }
 
+unsigned char	Emulator::SeriSend(unsigned char data)
+{
+	return _gb->get_cpu()->seri_send(data);
+}
+
 void	Emulator::HookExport(unsigned char(*sendFct)(unsigned char), bool(*ledStatut)(void))
 {
 	_exthookDef->send = sendFct;

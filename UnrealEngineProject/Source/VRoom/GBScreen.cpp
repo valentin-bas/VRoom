@@ -5,6 +5,9 @@
 
 #include <Emulator.h>
 
+AGBScreen* AGBScreen::TargetGB = nullptr;
+AGBScreen* AGBScreen::MasterGB = nullptr;
+
 
 AGBScreen::AGBScreen(const class FPostConstructInitializeProperties& PCIP)
 	: Super(PCIP)
@@ -41,6 +44,7 @@ void	AGBScreen::PostInitializeComponents()
 		UE_LOG(LogTemp, Warning, TEXT("Unable to load rom"));
 	}
 	UE_LOG(LogTemp, Warning, TEXT("Rom loaded"));
+	m_Emulator->HookExport(AGBScreen::CallbackExtPort, AGBScreen::GetLedStatut);
 }
 
 void	AGBScreen::BeginPlay()
@@ -51,6 +55,35 @@ void	AGBScreen::BeginPlay()
 	if (Iterator)
 	{
 		EnableInput(*Iterator);
+	}
+	UE_LOG(LogTemp, Warning, TEXT("Name : %s"), *GetName());
+	if (GetName() == "GBScreen_BP_C_1")
+	{
+		MasterGB = this;
+		InputComponent = GetWorld()->GetFirstPlayerController()->InputComponent;
+		InputComponent->BindAction("GBUpKey", IE_Pressed, this, &AGBScreen::UpButtonPressed);
+		InputComponent->BindAction("GBDownKey", IE_Pressed, this, &AGBScreen::DownButtonPressed);
+		InputComponent->BindAction("GBLeftKey", IE_Pressed, this, &AGBScreen::LeftButtonPressed);
+		InputComponent->BindAction("GBRightKey", IE_Pressed, this, &AGBScreen::RightButtonPressed);
+		InputComponent->BindAction("GBSelectKey", IE_Pressed, this, &AGBScreen::SelectButtonPressed);
+		InputComponent->BindAction("GBStartKey", IE_Pressed, this, &AGBScreen::StartButtonPressed);
+		InputComponent->BindAction("GBAKey", IE_Pressed, this, &AGBScreen::AButtonPressed);
+		InputComponent->BindAction("GBBKey", IE_Pressed, this, &AGBScreen::BButtonPressed);
+
+		InputComponent->BindAction("GBUpKey", IE_Released, this, &AGBScreen::UpButtonReleased);
+		InputComponent->BindAction("GBDownKey", IE_Released, this, &AGBScreen::DownButtonReleased);
+		InputComponent->BindAction("GBLeftKey", IE_Released, this, &AGBScreen::LeftButtonReleased);
+		InputComponent->BindAction("GBRightKey", IE_Released, this, &AGBScreen::RightButtonReleased);
+		InputComponent->BindAction("GBSelectKey", IE_Released, this, &AGBScreen::SelectButtonReleased);
+		InputComponent->BindAction("GBStartKey", IE_Released, this, &AGBScreen::StartButtonReleased);
+		InputComponent->BindAction("GBAKey", IE_Released, this, &AGBScreen::AButtonReleased);
+		InputComponent->BindAction("GBBKey", IE_Released, this, &AGBScreen::BButtonReleased);
+
+		for (TActorIterator<AGBScreen> ActorItr(GetWorld()); ActorItr; ++ActorItr)
+		{
+			if (ActorItr->GetName() == "GBScreen_BP_2")
+				TargetGB = *ActorItr;
+		}
 	}
 }
 
@@ -68,46 +101,28 @@ void	AGBScreen::Tick(float dt)
 	}
 }
 
-void	AGBScreen::UpButtonChangeState(bool pressed)
+unsigned char	AGBScreen::SeriSend(unsigned char data)
 {
-	//vrgb::Pad::SetState(vrgb::Pad::gbUP, pressed);
+	return m_Emulator->SeriSend(data);
 }
 
-void	AGBScreen::DownButtonChangeState(bool pressed)
+unsigned char	AGBScreen::CallbackExtPort(unsigned char data)
 {
-	//vrgb::Pad::SetState(vrgb::Pad::gbDOWN, pressed);
+	unsigned char ret = 0;
+
+	if (TargetGB)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Send : %c"), data);
+		ret = TargetGB->SeriSend(data);
+		UE_LOG(LogTemp, Warning, TEXT("Receive : %c"), ret);
+	}
+	return ret;
 }
 
-void	AGBScreen::LeftButtonChangeState(bool pressed)
+bool	AGBScreen::GetLedStatut()
 {
-	//vrgb::Pad::SetState(vrgb::Pad::gbLEFT, pressed);
+	return true;
 }
-
-void	AGBScreen::RightButtonChangeState(bool pressed)
-{
-	//vrgb::Pad::SetState(vrgb::Pad::gbRIGHT, pressed);
-}
-
-void	AGBScreen::AButtonChangeState(bool pressed)
-{
-	//vrgb::Pad::SetState(vrgb::Pad::gbA, pressed);
-}
-
-void	AGBScreen::BButtonChangeState(bool pressed)
-{
-	//vrgb::Pad::SetState(vrgb::Pad::gbB, pressed);
-}
-
-void	AGBScreen::SelectButtonChangeState(bool pressed)
-{
-	//vrgb::Pad::SetState(vrgb::Pad::gbSELECT, pressed);
-}
-
-void	AGBScreen::StartButtonChangeState(bool pressed)
-{
-	//vrgb::Pad::SetState(vrgb::Pad::gbSTART, pressed);
-}
-
 
 void	AGBScreen::UpdateTextureRegions(UTexture2D* Texture, int32 MipIndex, uint32 NumRegions, FUpdateTextureRegion2D* Regions, uint32 SrcPitch, uint32 SrcBpp, uint8* SrcData, bool bFreeData)
 {
@@ -167,7 +182,10 @@ void	AGBScreen::UpdateTextureRegions(UTexture2D* Texture, int32 MipIndex, uint32
 
 AGBScreen::CGBFramebuffer::CGBFramebuffer()
 	: m_RefreshScreen(false)
+	, m_padstate(0)
 {
+	for (int i = 0; i < 8; ++i)
+		m_keystates[i] = false;
 }
 
 bool	AGBScreen::CGBFramebuffer::UniqueNeedRefresh()
@@ -184,6 +202,8 @@ void	AGBScreen::CGBFramebuffer::refresh()
 {
 	m_RefreshScreen = true;
 	m_padstate = 0;
+	for (int i = 0; i < 8; ++i)
+		m_padstate |= m_keystates[i] ? (1 << i) : 0;
 }
 
 void	AGBScreen::CGBFramebuffer::render_screen(byte *buf, int width, int height, int depth)
@@ -209,4 +229,9 @@ void	AGBScreen::CGBFramebuffer::render_screen(byte *buf, int width, int height, 
 int		AGBScreen::CGBFramebuffer::check_pad()
 {
 	return m_padstate;
+}
+
+void	AGBScreen::CGBFramebuffer::SetPadState(int idx, bool value)
+{
+	m_keystates[idx] = value;;
 }
