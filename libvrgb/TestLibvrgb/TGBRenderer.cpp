@@ -71,11 +71,12 @@ void	TGBRenderer::refresh()
 
 void	TGBRenderer::render_screen(byte *buf, int width, int height, int depth)
 {
+	sf::Uint16* wbuf = (sf::Uint16*)buf;
 	for (int i = 0; i < height; ++i)
 	{
 		for (int j = 0; j < width; ++j)
 		{
-			sf::Uint16	gb_col = *buf++;
+			sf::Uint16	gb_col = *wbuf++;
 			sf::Uint8	r = ((gb_col >> 0) & 0x1f) << 3;
 			sf::Uint8	g = ((gb_col >> 5) & 0x1f) << 3;
 			sf::Uint8	b = ((gb_col >> 10) & 0x1f) << 3;
@@ -94,7 +95,7 @@ void	TGBRenderer::render_screen(byte *buf, int width, int height, int depth)
 void	Renderer::OnPostDraw()
 {
 }
-
+8
 void	Renderer::OnDrawPixel(int idColor, int x, int y)
 {
 	sf::Uint8	r = g_palettes[0][idColor][0];

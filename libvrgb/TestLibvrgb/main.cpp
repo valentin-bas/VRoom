@@ -93,8 +93,8 @@ int main(int argc, char* argv[])
 		emulator.Update();
 		renderer->Update();
 		const float elapsedTime = (float)clock.getElapsedTime().asMilliseconds();
-		if (elapsedTime < desiredMs)
-			sf::sleep(sf::milliseconds((desiredMs - elapsedTime) / 1000));
+		//if (elapsedTime < desiredMs)
+		//	sf::sleep(sf::milliseconds((desiredMs - elapsedTime) / 1000));
 		lastElapsedTime = clock.getElapsedTime().asMilliseconds();
 	}
 	delete renderer;
