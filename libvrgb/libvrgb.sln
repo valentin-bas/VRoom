@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libvrgb", "libvrgb\libvrgb.vcxproj", "{1F84BA09-6168-4E46-BBC6-5233365B582E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestLibvrgb", "TestLibvrgb\TestLibvrgb.vcxproj", "{85E2993A-F002-47C3-ADE7-060E277FAD0C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtgb", "libtgb\libtgb.vcxproj", "{58212822-5C31-475E-AE6F-89C8C0EF2FED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,12 @@ Global
 		{85E2993A-F002-47C3-ADE7-060E277FAD0C}.Release|Win32.Build.0 = Release|Win32
 		{85E2993A-F002-47C3-ADE7-060E277FAD0C}.Release|x64.ActiveCfg = Release|x64
 		{85E2993A-F002-47C3-ADE7-060E277FAD0C}.Release|x64.Build.0 = Release|x64
+		{58212822-5C31-475E-AE6F-89C8C0EF2FED}.Debug|Win32.ActiveCfg = Debug|Win32
+		{58212822-5C31-475E-AE6F-89C8C0EF2FED}.Debug|Win32.Build.0 = Debug|Win32
+		{58212822-5C31-475E-AE6F-89C8C0EF2FED}.Debug|x64.ActiveCfg = Debug|Win32
+		{58212822-5C31-475E-AE6F-89C8C0EF2FED}.Release|Win32.ActiveCfg = Release|Win32
+		{58212822-5C31-475E-AE6F-89C8C0EF2FED}.Release|Win32.Build.0 = Release|Win32
+		{58212822-5C31-475E-AE6F-89C8C0EF2FED}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
