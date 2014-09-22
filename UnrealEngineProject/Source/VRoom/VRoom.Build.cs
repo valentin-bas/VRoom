@@ -33,10 +33,10 @@ public class VRoom : ModuleRules
 		//		}
 		// }
 
-        LoadVRGB(Target);
+        LoadTGB(Target);
 	}
 
-    public bool LoadVRGB(TargetInfo Target)
+    public bool LoadTGB(TargetInfo Target)
     {
         bool isLibrarySupported = false;
 
@@ -45,15 +45,15 @@ public class VRoom : ModuleRules
             isLibrarySupported = true;
 
             string PlatformString = (Target.Platform == UnrealTargetPlatform.Win64) ? "x64" : "x86";
-            string LibrariesPath = Path.Combine(ThirdPartyPath, "libvrgb", "Libraries");
+            string LibrariesPath = Path.Combine(ThirdPartyPath, "libtgb", "Libraries");
 
-            PublicAdditionalLibraries.Add(Path.Combine(LibrariesPath, "libvrgb." + PlatformString + ".lib"));
+            PublicAdditionalLibraries.Add(Path.Combine(LibrariesPath, "libtgb." + PlatformString + ".lib"));
         }
 
         if (isLibrarySupported)
         {
             // Include path
-            PublicIncludePaths.Add(Path.Combine(ThirdPartyPath, "libvrgb", "Includes"));
+            PublicIncludePaths.Add(Path.Combine(ThirdPartyPath, "libtgb", "Includes"));
         }
 
         Definitions.Add(string.Format("WITH_BOBS_MAGIC_BINDING={0}", isLibrarySupported ? 1 : 0));

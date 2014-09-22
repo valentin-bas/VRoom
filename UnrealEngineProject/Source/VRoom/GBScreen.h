@@ -3,17 +3,17 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
-#include "libvrgb/IGBScreenDrawable.h"
+#include <GBRenderer.h>
+
 #include "GBScreen.generated.h"
 
 /**
  * 
  */
 
-namespace vrgb
+namespace tgb
 {
-	class VRGBEmulator;
-	class Cartridge;
+	class Emulator;
 }
 
 UCLASS()
@@ -23,7 +23,7 @@ private:
 
 	GENERATED_UCLASS_BODY()
 
-	class CGBFramebuffer : public vrgb::IGBScreenDrawable
+	class CGBFramebuffer : public tgb::GBRenderer
 	{
 	public:
 		static const int	kFrameBufferWidth = 160;
@@ -32,17 +32,16 @@ private:
 	private:
 		uint8			m_Framebuffer[kFrameBufferWidth * kFrameBufferHeight * 4];
 		bool			m_RefreshScreen;
+		int				m_padstate;
 
 	public:
 		CGBFramebuffer();
 
-		virtual void	OnPreDraw() override;
-		virtual void	OnPostDraw() override;
-		virtual void	OnDrawPixel(int idColor, int x, int y) override;
-		virtual void	OnRefreshScreen() override;
-		virtual void	OnClear() override;
-
 		bool	UniqueNeedRefresh();
+
+		virtual void	refresh() override;
+		virtual void	render_screen(byte *buf, int width, int height, int depth) override;
+		virtual int		check_pad() override;
 
 		uint8*	Data() { return m_Framebuffer; }
 	};
@@ -52,9 +51,8 @@ private:
 	UPROPERTY() UTexture2D *DynamicTexture;
 	UPROPERTY() UMaterialInstanceDynamic* DynamicMaterial;
 
-	vrgb::VRGBEmulator	*m_Emulator;
-	vrgb::Cartridge		*m_Cartridge;
-	CGBFramebuffer		m_Framebuffer;
+	CGBFramebuffer	m_Framebuffer;
+	tgb::Emulator*	m_Emulator;
 
 protected:
 	virtual void Tick(float dt) override;

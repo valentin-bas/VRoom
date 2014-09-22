@@ -3,33 +3,17 @@
 #include "VRoom.h"
 #include "GBScreen.h"
 
-#include "libvrgb/VRGBEmulator.h"
-#include "libvrgb/Cartridge.h"
-#include "libvrgb/Pad.h"
+#include <Emulator.h>
 
-static const uint8 g_Palettes[][4][3] =
-{
-	{
-		{ 16, 57, 16 },
-		{ 49, 99, 49 },
-		{ 140, 173, 16 },
-		{ 156, 189, 16 }
-	},
-	{
-		{ 0, 0, 0 },
-		{ 85, 85, 85 },
-		{ 170, 170, 170 },
-		{ 255, 255, 255 }
-	}
-};
 
 AGBScreen::AGBScreen(const class FPostConstructInitializeProperties& PCIP)
-	: Super(PCIP), m_Emulator(nullptr)
+	: Super(PCIP)
+	, m_Emulator(nullptr)
 {
 	screen = PCIP.CreateDefaultSubobject<UStaticMeshComponent>(this, TEXT("screen"));
-	
+
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> StaticMesh(TEXT("StaticMesh'/Game/MyAssets/Models/GBScreen_SM.GBScreen_SM'"));
-	
+
 	screen->SetStaticMesh(StaticMesh.Object);
 	RootComponent = screen;
 
@@ -51,18 +35,12 @@ void	AGBScreen::PostInitializeComponents()
 	screen->SetMaterial(0, DynamicMaterial);
 	DynamicMaterial->SetTextureParameterValue(FName("T2DTexture"), DynamicTexture);
 
-	m_Emulator = new vrgb::VRGBEmulator();				//CHECK //LEAK
-	if (m_Emulator->Init())
+	m_Emulator = new tgb::Emulator(m_Framebuffer);				//CHECK //LEAK
+	if (!m_Emulator->LoadCartridge("tetris.gb"))
 	{
-		//CHECK
+		UE_LOG(LogTemp, Warning, TEXT("Unable to load rom"));
 	}
-
-	m_Cartridge = new vrgb::Cartridge("tetris.gb");	//CHECK //LEAK
-	if (m_Cartridge->IsLoaded())
-	{
-		m_Emulator->SetScreen(&m_Framebuffer);
-		m_Emulator->LoadCartridge(m_Cartridge);
-	}
+	UE_LOG(LogTemp, Warning, TEXT("Rom loaded"));
 }
 
 void	AGBScreen::BeginPlay()
@@ -92,42 +70,42 @@ void	AGBScreen::Tick(float dt)
 
 void	AGBScreen::UpButtonChangeState(bool pressed)
 {
-	vrgb::Pad::SetState(vrgb::Pad::gbUP, pressed);
+	//vrgb::Pad::SetState(vrgb::Pad::gbUP, pressed);
 }
 
 void	AGBScreen::DownButtonChangeState(bool pressed)
 {
-	vrgb::Pad::SetState(vrgb::Pad::gbDOWN, pressed);
+	//vrgb::Pad::SetState(vrgb::Pad::gbDOWN, pressed);
 }
 
 void	AGBScreen::LeftButtonChangeState(bool pressed)
 {
-	vrgb::Pad::SetState(vrgb::Pad::gbLEFT, pressed);
+	//vrgb::Pad::SetState(vrgb::Pad::gbLEFT, pressed);
 }
 
 void	AGBScreen::RightButtonChangeState(bool pressed)
 {
-	vrgb::Pad::SetState(vrgb::Pad::gbRIGHT, pressed);
+	//vrgb::Pad::SetState(vrgb::Pad::gbRIGHT, pressed);
 }
 
 void	AGBScreen::AButtonChangeState(bool pressed)
 {
-	vrgb::Pad::SetState(vrgb::Pad::gbA, pressed);
+	//vrgb::Pad::SetState(vrgb::Pad::gbA, pressed);
 }
 
 void	AGBScreen::BButtonChangeState(bool pressed)
 {
-	vrgb::Pad::SetState(vrgb::Pad::gbB, pressed);
+	//vrgb::Pad::SetState(vrgb::Pad::gbB, pressed);
 }
 
 void	AGBScreen::SelectButtonChangeState(bool pressed)
 {
-	vrgb::Pad::SetState(vrgb::Pad::gbSELECT, pressed);
+	//vrgb::Pad::SetState(vrgb::Pad::gbSELECT, pressed);
 }
 
 void	AGBScreen::StartButtonChangeState(bool pressed)
 {
-	vrgb::Pad::SetState(vrgb::Pad::gbSTART, pressed);
+	//vrgb::Pad::SetState(vrgb::Pad::gbSTART, pressed);
 }
 
 
@@ -192,38 +170,6 @@ AGBScreen::CGBFramebuffer::CGBFramebuffer()
 {
 }
 
-void	AGBScreen::CGBFramebuffer::OnPreDraw()
-{
-}
-
-void	AGBScreen::CGBFramebuffer::OnPostDraw()
-{
-}
-
-void	AGBScreen::CGBFramebuffer::OnDrawPixel(int idColor, int x, int y)
-{
-	uint8	r = g_Palettes[0][idColor][0];
-	uint8	g = g_Palettes[0][idColor][1];
-	uint8	b = g_Palettes[0][idColor][2];
-
-	m_Framebuffer[y * kFrameBufferWidth * 4 + x * 4 + 0] = r;
-	m_Framebuffer[y * kFrameBufferWidth * 4 + x * 4 + 1] = g;
-	m_Framebuffer[y * kFrameBufferWidth * 4 + x * 4 + 2] = b;
-	m_Framebuffer[y * kFrameBufferWidth * 4 + x * 4 + 3] = 255;
-}
-
-void	AGBScreen::CGBFramebuffer::OnRefreshScreen()
-{
-	m_RefreshScreen = true;
-}
-void	AGBScreen::CGBFramebuffer::OnClear()
-{
-	for (int r = 0; r < kFrameBufferWidth; ++r)
-		for (int c = 0; c < kFrameBufferHeight; ++c)
-			for (int k = 0; k < 4; ++k)
-				m_Framebuffer[r * kFrameBufferWidth * 4 + c * 4 + k] = 255;
-}
-
 bool	AGBScreen::CGBFramebuffer::UniqueNeedRefresh()
 {
 	if (m_RefreshScreen)
@@ -232,4 +178,35 @@ bool	AGBScreen::CGBFramebuffer::UniqueNeedRefresh()
 		return true;
 	}
 	return false;
+}
+
+void	AGBScreen::CGBFramebuffer::refresh()
+{
+	m_RefreshScreen = true;
+	m_padstate = 0;
+}
+
+void	AGBScreen::CGBFramebuffer::render_screen(byte *buf, int width, int height, int depth)
+{
+	uint16* wbuf = (uint16*)buf;
+	for (int y = 0; y < height; ++y)
+	{
+		for (int x = 0; x < width; ++x)
+		{
+			uint16	gb_col = *wbuf++;
+			uint8	r = ((gb_col >> 0) & 0x1f) << 3;
+			uint8	g = ((gb_col >> 5) & 0x1f) << 3;
+			uint8	b = ((gb_col >> 10) & 0x1f) << 3;
+
+			m_Framebuffer[y * kFrameBufferWidth * 4 + x * 4 + 0] = r;
+			m_Framebuffer[y * kFrameBufferWidth * 4 + x * 4 + 1] = g;
+			m_Framebuffer[y * kFrameBufferWidth * 4 + x * 4 + 2] = b;
+			m_Framebuffer[y * kFrameBufferWidth * 4 + x * 4 + 3] = 255;
+		}
+	}
+}
+
+int		AGBScreen::CGBFramebuffer::check_pad()
+{
+	return m_padstate;
 }
