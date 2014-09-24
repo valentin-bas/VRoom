@@ -319,9 +319,11 @@ void lcd::sprite_render(void *buf,int scanline)
 		if (atr&0x20){ // ”½“]‚·‚é
 			byte tmp_p=l2;
 			l2=((l1>>2)&0x33)|((l1<<2)&0xcc);
-			_rotl8(l2, 4);
+			//__asm rol byte ptr l2 ,4
+			l2 = _rotl8(l2, 4);
 			l1=((tmp_p>>2)&0x33)|((tmp_p<<2)&0xcc);
-			_rotl8(l1, 4);
+			// __asm rol byte ptr l1, 4;
+			l1 = _rotl8(l1, 4);
 		}
 
 		if (x<0){ // ƒNƒŠƒbƒsƒ“ƒOˆ—
@@ -439,9 +441,11 @@ void lcd::bg_render_color(void *buf,int scanline)
 	if (atr&0x20){ // ”½“]‚·‚é
 		byte tmp_p=calc2;
 		calc2=((calc1>>2)&0x33)|((calc1<<2)&0xcc);
-		_rotl8(calc2, 4);
+		//__asm rol byte ptr calc2, 4;
+		calc2 = _rotl8(calc2, 4);
 		calc1=((tmp_p>>2)&0x33)|((tmp_p<<2)&0xcc);
-		_rotl8(calc1, 4);
+		//__asm rol byte ptr calc1, 4
+		calc1 = _rotl8(calc1, 4);
 	}
 
 	*(dat++)=pal[calc2>>6];
@@ -503,9 +507,11 @@ void lcd::bg_render_color(void *buf,int scanline)
 		if (atr&0x20){ // ”½“]‚·‚é
 			byte tmp_p=calc2;
 			calc2=((calc1>>2)&0x33)|((calc1<<2)&0xcc);
-			_rotl8(calc2, 4);
+			//__asm rol byte ptr calc2, 4
+			calc2 = _rotl8(calc2, 4);
 			calc1=((tmp_p>>2)&0x33)|((tmp_p<<2)&0xcc);
-			_rotl8(calc1, 4);
+			//__asm rol byte ptr calc1, 4
+			calc1 = _rotl8(calc1, 4);
 		}
 
 		*(dat++)=pal[calc2>>6];
@@ -592,9 +598,11 @@ void lcd::win_render_color(void *buf,int scanline)
 		if (atr&0x20){ // ”½“]‚·‚é
 			byte tmp_p=calc2;
 			calc2=((calc1>>2)&0x33)|((calc1<<2)&0xcc);
-			_rotl8(calc2, 4);
+			//__asm rol byte ptr calc2, 4
+			calc2 = _rotl8(calc2, 4);
 			calc1=((tmp_p>>2)&0x33)|((tmp_p<<2)&0xcc);
-			_rotl8(calc1, 4);
+			//__asm rol byte ptr calc1, 4
+			calc1 = _rotl8(calc1, 4);
 		}
 
 		*(dat++)=pal[calc2>>6];
@@ -682,9 +690,11 @@ void lcd::sprite_render_color(void *buf,int scanline)
 		if (atr&0x20){ // ”½“]‚·‚é
 			byte tmp_p=l2;
 			l2=((l1>>2)&0x33)|((l1<<2)&0xcc);
-			_rotl8(l2, 4);
+			//__asm rol byte ptr l2, 4
+			l2 = _rotl8(l2, 4);
 			l1=((tmp_p>>2)&0x33)|((tmp_p<<2)&0xcc);
-			_rotl8(l1, 4);
+			//__asm rol byte ptr l1, 4
+			l1 = _rotl8(l1, 4);
 		}
 
 		if (x<0){ // ƒNƒŠƒbƒsƒ“ƒOˆ—
