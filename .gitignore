@@ -1,3 +1,7 @@
+## Keep SFML binaries
+!SFML-2.1/lib/Debug/*.lib
+!SFML-2.1/lib/Release/*.lib
+
 agame.gb
 
 ## Ignore Unreal Engine 4 temporary files and build results
